@@ -1,0 +1,37 @@
+.form__container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    //background: linear-gradient(180deg, #2D2D2D 0%, #1E1E1E 100%);
+    background: #262626;
+    padding: 4rem 1rem; 
+    form { 
+        align-content: flex-start; 
+        display: flex; 
+        flex-direction: column;
+        width: 30rem;  
+        #footer__input__text { 
+            padding: 0.5rem 1rem 0.5rem 0; 
+            font-size: $s-p2; 
+            font-family: $f-2; 
+            margin-top: 0.5rem; 
+            border-top: none; 
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid $neutral-100; 
+            background: #262626; 
+        }
+        #footer__input__text:focus{ 
+            outline: none !important;
+        }
+        #footer__input__submit { 
+            font-size: $s-p2; 
+            padding: 0.5rem 1rem; 
+            margin-top: 1rem; 
+            border-color: $neutral-50; 
+            border-width: 1px; 
+            width: max-content; 
+            background: #262626; 
+        }
+    }
+}

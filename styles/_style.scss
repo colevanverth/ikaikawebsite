@@ -1,0 +1,50 @@
+
+#__next {
+     background: $neutral-200; 
+}
+* { 
+    font-size: 18px;
+    color: $neutral-50; 
+    text-decoration: none; 
+    list-style: none; 
+    font-family: $f-1; 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    font-size: $s-h1; 
+    font-family: $f-3; 
+}
+
+h2 { 
+    font-size: $s-h3; 
+    font-family: $f-1; 
+}
+
+h3 { 
+    font-size: $s-h3; 
+    font-family: $f-1; 
+}
+
+p { 
+    font-size: $s-p; 
+    font-family: $f-2; 
+    line-height: 1.5rem; 
+}
+
+a { 
+    font-size: $s-p; 
+}
+
+.gif__container { 
+    background: url('https://i.gifer.com/GuBY.gif');
+    background-size: 100% 100%; 
+ }
+
+ .gradient__container {
+    background: linear-gradient(180deg, #151515 44.74%, #132027 100%);
+    //background: linear-gradient(180deg, #151515 0%, #12181B 100%);
+ }

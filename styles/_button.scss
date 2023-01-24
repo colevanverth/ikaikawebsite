@@ -1,0 +1,56 @@
+
+.button__big { 
+    font-family: $f-1; 
+
+    display: inner-block; 
+    font-size: $s-p; 
+    margin-top: 1rem; 
+    display: inline-block; 
+    padding: 0.5rem 2.5rem;
+    background: $neutral-50; 
+    color: $neutral-200; 
+    width: max-content; 
+    border: 1px solid $neutral-50; 
+    margin-right: 2rem; 
+    //transition: none; 
+    img { 
+        margin-left: 9px; 
+    }
+}
+
+.button__big__hollow { 
+    font-family: $f-1; 
+    display: inner-block; 
+    font-size: $s-p; 
+    margin-top: 1rem; 
+    display: inline-block; 
+    padding: 0.5rem 2.5rem; 
+    background: transparent;
+    color: $neutral-50;  
+    width: max-content; 
+    border: 1px solid $neutral-50; 
+    //transition: none; 
+    img { 
+        margin-left: 9px; 
+    }
+}
+
+.button__small { 
+    width: max-content; 
+    font-family: $f-5; 
+    font-size: $s-p2; 
+    padding: 0.5rem 1.5rem; 
+    margin-top: 0.5rem; 
+    //border-radius: 5px; 
+    background: transparent;
+    border: 1px solid $neutral-50; 
+   
+}
+
+@media only screen and (max-width: 750px) { 
+    .button__big, .button__big__hollow { 
+        width: 100%; 
+        text-align: center; 
+    }
+
+}

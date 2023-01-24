@@ -1,0 +1,27 @@
+.content__container {
+     padding-top: 4.5rem; 
+     background: radial-gradient(50% 50% at 50% 50%, #0E1B22 0%, #151515 100%);
+}
+.services__container { 
+    padding: 4rem 0; 
+    display: flex; 
+    justify-content: center;
+    .services { 
+        width: calc(1350px - 32rem); 
+        display: flex; 
+        flex-direction: column; 
+    }
+}
+
+@media only screen and (max-width: 1350px) { 
+    .services__container {
+        padding-left: 2rem; 
+    }
+}
+
+@media only screen and (max-width: 750px) { 
+    .services__container {
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+    }
+}
