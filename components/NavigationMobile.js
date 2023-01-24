@@ -14,11 +14,11 @@ const NavigationMobile = ({setMobile}) => {
                 </ul>  
                 <a className='navigation__mobile__header'> SOCIALS </a>
                 <ul className='navigation__mobile__socials'>
-                <li> <a href='https://twitter.com/'> <Image src="/twitter-logo.svg" width='25' height='25'/> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="youtube-logo.svg" width='25' height='25'/> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="spotify-logo.svg" width='25' height='25'/> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="instagram-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="discord-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
+                        <li key='1'> <a href='https://twitter.com/'> <Image src="/twitter-logo.svg" width='25' height='25'/> </a> </li>
+                        <li key='2'> <a href='https://twitter.com/'> <Image src="youtube-logo.svg" width='25' height='25'/> </a> </li>
+                        <li key='3'> <a href='https://twitter.com/'> <Image src="spotify-logo.svg" width='25' height='25'/> </a> </li>
+                        <li key='4'> <a href='https://twitter.com/'> <Image src="instagram-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
+                        <li key='5'> <a href='https://twitter.com/'> <Image src="discord-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
                 </ul>        
         </nav> 
     </motion.div> 

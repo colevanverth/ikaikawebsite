@@ -22,7 +22,7 @@ const Services = ( props ) => {
                     <main className='services'> 
                     {service.map((item, index) => { 
                             return ( 
-                                <motion.div className='service__container' variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}}>
+                                <motion.div key={new Date().getTime()} className='service__container' variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}}>
                                     <img alt={item.alt} width='50%' src={item.imageLink}/>
                                     <div> 
                                         <a className='service__tag'> {item.tag.toUpperCase()} </a> 

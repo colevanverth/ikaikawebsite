@@ -16,7 +16,7 @@ const OutNow = (props) => {
                 <motion.section drag='x' whileDrag={{scale: 0.9}} dragConstraints={{left: -500, right: 0}} variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}} className='outnow'>
                     {outnow.map((item, index) => { 
                         return ( 
-                            <div className='music__container'> 
+                            <div className='music__container' key={new Date().getTime()}> 
                                 <div style={{backgroundImage: `url(${item.imageLink})`}}/>
                                 <a> {item.name} </a>
                                 <a className='music__artist'> {item.artist} </a>

@@ -17,11 +17,11 @@ const Navigation = ({setMobile}) => {
                 <nav>
                     <Image src="/logo.svg" width='65' height='65' className='navigation__logo'/> 
                     <ul className='navigation__socials'>
-                        <li> <a href='https://twitter.com/'> <Image src="/twitter-logo.svg" width='25' height='25' /></a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="/discord-logo.svg" width='25' height='25' /> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="/instagram-logo.svg" width='25' height='25' /> </a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="/spotify-logo.svg" width='25' className='navigation-social' height='25' /></a> </li>
-                        <li> <a href='https://twitter.com/'> <Image src="/youtube-logo.svg" width='25' className='navigation-social' height='25' /> </a> </li>
+                        <li key='1'> <a href='https://twitter.com/'> <Image src="/twitter-logo.svg" width='25' height='25' /></a> </li>
+                        <li key='2'> <a href='https://twitter.com/'> <Image src="/discord-logo.svg" width='25' height='25' /> </a> </li>
+                        <li key='3'> <a href='https://twitter.com/'> <Image src="/instagram-logo.svg" width='25' height='25' /> </a> </li>
+                        <li key='4'> <a href='https://twitter.com/'> <Image src="/spotify-logo.svg" width='25' className='navigation-social' height='25' /></a> </li>
+                        <li key='5'> <a href='https://twitter.com/'> <Image src="/youtube-logo.svg" width='25' className='navigation-social' height='25' /> </a> </li>
                     </ul>
                     <div className='navigation__bar'> 
                     </div> 

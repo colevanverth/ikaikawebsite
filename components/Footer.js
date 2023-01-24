@@ -21,24 +21,24 @@ const Footer = () => {
                 </div> 
                 <ul>
                     <a className='footer__label'> SOCIALS </a>
-                    <li> <a> Email </a> </li>
-                    <li> <a> Twitter </a> </li>
-                    <li> <a> Instagram </a> </li>
-                    <li> <a> Youtube </a> </li>
-                    <li> <a> Discord </a> </li>
-                    <li> <a> </a> </li>
+                    <li key='1'> <a> Email </a> </li>
+                    <li key='2'> <a> Twitter </a> </li>
+                    <li key='3'> <a> Instagram </a> </li>
+                    <li key='4'> <a> Youtube </a> </li>
+                    <li key='5'> <a> Discord </a> </li>
+                    <li key='6'> <a> </a> </li>
                 </ul>
                 <ul>
                     <a className='footer__label'> LEGAL </a>
-                    <li> <a> Terms and Conditions </a> </li>
-                    <li> <a> Privacy Policy </a> </li>
-                    <li> <a> Cookies Policy </a> </li>
+                    <li key='1'> <a> Terms and Conditions </a> </li>
+                    <li key='2'> <a> Privacy Policy </a> </li>
+                    <li key='3'> <a> Cookies Policy </a> </li>
                 </ul>
                 <ul>
                     <a className='footer__label'> IKAIKA RECORDS </a>
-                    <li> <a> business@ikaikarecords.us </a> </li>
-                    <li> <a> Website Designed by Cole Van Verth </a> </li>
-                    <li> <a> Copyright © Ikaika Records 2023 </a> </li>
+                    <li key='1'> <a> business@ikaikarecords.us </a> </li>
+                    <li key='2'> <a> Website Designed by Cole Van Verth </a> </li>
+                    <li key='3'> <a> Copyright © Ikaika Records 2023 </a> </li>
                 </ul>
             </footer> 
         </div> 
