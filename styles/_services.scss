@@ -1,24 +1,24 @@
 .content__container {
      padding-top: 4.5rem; 
-     background: radial-gradient(50% 50% at 50% 50%, #0E1B22 0%, #151515 100%);
+     background: radial-gradient(50% 50% at 50% 50%, #132027 0%, #161A1E 100%);
 }
 .services__container { 
-    padding: 4rem 0; 
+    padding: 4rem 2rem; 
     display: flex; 
     justify-content: center;
     .services { 
-        width: calc(1350px - 32rem); 
+        width: calc(1400px);  // Was 32
         display: flex; 
         flex-direction: column; 
     }
 }
 
 @media only screen and (max-width: 1350px) { 
-    .services__container {
-        padding-left: 2rem; 
+    .services {
+        align-items: center;
     }
-}
 
+}
 @media only screen and (max-width: 750px) { 
     .services__container {
         padding-left: 1rem; 

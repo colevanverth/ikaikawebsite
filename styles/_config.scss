@@ -1,50 +1,49 @@
 @font-face {
-    font-family: 'DMSans-Bold';
-    src: url('../fonts/DMSans-Bold.ttf') format('woff'); 
+    font-family: 'SpaceGrotesk-SemiBold';
+    src: url('../fonts/SpaceGrotesk-SemiBold.ttf') format('woff'); 
 }
 
 @font-face {
-    font-family: 'DMSans-Regular';
-    src: url('../fonts/DMSans-Regular.ttf') format('woff'); 
+    font-family: 'SpaceGrotesk-Regular';
+    src: url('../fonts/SpaceGrotesk-Regular.ttf') format('woff'); 
 }
 
 @font-face { 
-    font-family: 'Inter-ExtraBold';
-    src: url('../fonts/Inter-Variable.ttf') format('woff');
+    font-family: 'Archivo-Black';
+    src: url('../fonts/Archivo-Black.ttf') format('woff');
     font-weight: 800; 
 }
 
 @font-face { 
-    font-family: 'DMSans-MediumItalic'; 
-    src: url('../fonts/DMSans-MediumItalic.ttf') format('woff'); 
-}
-
-@font-face { 
-    font-family: 'DMSans-Medium'; 
-    src: url('../fonts/DMSans-Medium.ttf') format('woff'); 
+    font-family: 'SpaceGrotesk-Medium'; 
+    src: url('../fonts/SpaceGrotesk-Medium.ttf') format('woff'); 
 }
 
 
 // Fonts
-$f-1: 'DMSans-Bold', sans-serif;
-$f-2: 'DMSans-Regular', sans-serif;
-$f-3: 'Inter-ExtraBold', sans-serif;
-$f-4: 'DMSans-MediumItalic', 'sans-serif'; 
-$f-5: 'DMSans-Medium', 'sans-serif'; 
+$f-1: 'SpaceGrotesk-SemiBold', sans-serif;
+$f-2: 'SpaceGrotesk-Regular', sans-serif;
+$f-3: 'Archivo-Black', sans-serif;
+$f-5: 'SpaceGrotesk-Medium', sans-serif; 
 
 // Font sizes
-$s-h1: 67.3px; 
-$s-h2: 36px; 
-$s-h3: 23.99px; 
+$s-h1: 75.76px; 
+$s-h2: 42.63px;
+$s-h3: 31.98px; 
+$s-h4: 23.99px;
 $s-p: 18px; 
 $s-a: 18px; 
 $s-p2: 13.5px; 
 
 // Neutral colors
-$neutral-50: #FFFFFF; 
-$neutral-100: #AEAEAE; 
-$neutral-150: #414141; 
-$neutral-200: #151515; 
+//$neutral-50: #FFFFFF; 
+$neutral-50: #ffffff; 
+//$neutral-100: #AEAEAE; 
+$neutral-100: #A4ACB4; 
+//$neutral-150: #414141; 
+$neutral-150: #25272b;
+//$neutral-200: #151515;
+$neutral-200: #161A1E; 
 
 // Primary colors
 $primary-50: #1C6590;

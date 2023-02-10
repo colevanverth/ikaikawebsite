@@ -14,11 +14,11 @@ const NavigationMobile = ({setMobile}) => {
                 </ul>  
                 <a className='navigation__mobile__header'> SOCIALS </a>
                 <ul className='navigation__mobile__socials'>
-                        <li key='1'> <a href='https://twitter.com/'> <Image src="/twitter-logo.svg" width='25' height='25'/> </a> </li>
-                        <li key='2'> <a href='https://twitter.com/'> <Image src="youtube-logo.svg" width='25' height='25'/> </a> </li>
-                        <li key='3'> <a href='https://twitter.com/'> <Image src="spotify-logo.svg" width='25' height='25'/> </a> </li>
-                        <li key='4'> <a href='https://twitter.com/'> <Image src="instagram-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
-                        <li key='5'> <a href='https://twitter.com/'> <Image src="discord-logo.svg" width='25' className='navigation-social' height='25'/> </a> </li>
+                        <li key='1'> <a href='https://twitter.com/ikaikarecords'> <Image src="/twitter-logo.svg" width='25' height='25' alt="White filled twitter icon"/> </a> </li>
+                        <li key='2'> <a href='https://www.youtube.com/@IkaikaRecords/'> <Image src="youtube-logo.svg" width='25' height='25' alt="White filled twitter icon"/> </a> </li>
+                        <li key='3'> <a href=' https://open.spotify.com/user/1rb7msvqg87wccfaxnb2gzsmb/'> <Image src="spotify-logo.svg" width='25' height='25' alt="White filled twitter icon"/> </a> </li>
+                        <li key='4'> <a href='https://www.instagram.com/ikaikarecords/?hl=en/'> <Image src="instagram-logo.svg" width='25' className='navigation-social' height='25' alt="White filled twitter icon"/> </a> </li>
+                        <li key='5'> <a href='https://discord.gg/4Nb9qf26vt'> <Image src="discord-logo.svg" width='25' className='navigation-social' height='25' alt="White filled twitter icon"/> </a> </li>
                 </ul>        
         </nav> 
     </motion.div> 

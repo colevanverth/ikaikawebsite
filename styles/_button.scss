@@ -1,6 +1,6 @@
 
 .button__big { 
-    font-family: $f-1; 
+    font-family: $f-5; 
 
     display: inner-block; 
     font-size: $s-p; 
@@ -8,7 +8,7 @@
     display: inline-block; 
     padding: 0.5rem 2.5rem;
     background: $neutral-50; 
-    color: $neutral-200; 
+    color: $neutral-200;
     width: max-content; 
     border: 1px solid $neutral-50; 
     margin-right: 2rem; 
@@ -16,26 +16,43 @@
     img { 
         margin-left: 9px; 
     }
+    transition: all 0.25s linear;
+}
+.button__big:hover { 
+    background: #a6a6a6;
+    border-color: #a6a6a6;
 }
 
 .button__big__hollow { 
-    font-family: $f-1; 
-    display: inner-block; 
+    font-family: $f-5; 
     font-size: $s-p; 
     margin-top: 1rem; 
-    display: inline-block; 
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
     padding: 0.5rem 2.5rem; 
     background: transparent;
     color: $neutral-50;  
     width: max-content; 
     border: 1px solid $neutral-50; 
-    //transition: none; 
+    transition: linear all 0.25s;
     img { 
         margin-left: 9px; 
     }
 }
+.button__big__hollow:hover {
+    img { 
+        filter: invert(0%) sepia(4%) saturate(4221%) hue-rotate(346deg) brightness(103%) contrast(84%);
+    }
+}
 
 .button__small { 
+    img { 
+        margin-left: 0.25rem;
+    }
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
     width: max-content; 
     font-family: $f-5; 
     font-size: $s-p2; 

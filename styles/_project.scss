@@ -1,0 +1,100 @@
+
+.project__input__text {
+    display: block;
+    width: 100%; 
+    padding: 0.5rem !important;
+}
+.project__container { 
+    padding: 4rem 2rem 8rem 2rem;
+    justify-content: center;
+    display: flex;
+}
+
+
+.project__form { 
+        width: 1400px;
+        display: flex; 
+        flex-wrap: wrap;
+        a { 
+            font-size: $s-p2;
+            font-family: $f-5;
+            padding-bottom: 0.25rem;
+        }
+      .project__input__text { 
+            padding: 0.5rem 1rem 0.5rem 0; 
+            font-size: $s-p; 
+            font-family: $f-2; 
+            margin-bottom: 2rem; 
+            border-top: none; 
+            border-left: none;
+            border-right: none;
+            border: 1px solid $neutral-50;
+            background: $neutral-200;
+        }
+       .project__input__text:focus{ 
+            outline: none !important;
+        }
+        .project__input__submit { 
+            font-size: $s-p; 
+            width: 100%;
+            font-family: $f-5;
+            padding: 0.5rem 1rem; 
+            margin-top: 1rem; 
+            border: none;
+            background: $neutral-50;
+            cursor: pointer;
+            color: $neutral-200;
+        } 
+        input { 
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        #project__input__name { 
+        }
+        .project__input[first] { 
+            width: 50%; 
+            padding-right: 1rem;
+        }
+        .project__input[second] { 
+            width: 50%; 
+            padding-left: 1rem;
+        }
+        .project__input[third] { 
+            width: 50%; 
+        }
+        .project__input[fourth] { 
+        flex-basis: 100%;
+         textarea {
+             resize: none;
+          }
+        }
+        .project__input { 
+            display: flex; 
+            flex-direction: column;
+        }
+}
+
+@media only screen and (max-width: 750px) { 
+   .project__container { 
+      padding-left: 1rem;
+      padding-right: 1rem;
+      .project__form { 
+        .project__input[first] { 
+            flex-basis: 100%; 
+            padding: 0;
+         }
+         .project__input[second] { 
+            padding: 0;
+            flex-basis: 100%;
+         }
+         .project__input[third] { 
+            flex-basis: 100%; 
+         }
+         .project__input[fourth] { 
+            textarea { 
+               height: 10rem;
+            }
+         }
+      }
+   }
+}

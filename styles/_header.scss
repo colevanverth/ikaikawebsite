@@ -1,5 +1,5 @@
 .header__container { 
-    padding: 4rem 0 0 2rem; 
+    padding: 4rem 2rem 0 2rem; 
     display: flex; 
     justify-content: center; 
     .header__fill { 
@@ -19,14 +19,18 @@
     }
 
     header {
-        width: calc(1350px - 14rem); 
+        width: calc(1400px); 
         div { 
             height: 1px; 
-            background: linear-gradient(90deg, #364A59 0.65%, #151515 98.98%);
+            background: linear-gradient(90deg, #3b4e5c 0.65%, #161A1E 98.98%);
             width: 100%; 
         }
         h2 { 
             padding-bottom: 0.5rem;
+        }
+        a { 
+            color: $neutral-100;
+            font-family: $f-2;
         }
 }
 }

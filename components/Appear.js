@@ -1,7 +1,7 @@
 export const appear = { 
     hidden: { 
         opacity: 0,
-        y: 100
+        y: 35
     },
     visible: { 
         opacity: 1, 

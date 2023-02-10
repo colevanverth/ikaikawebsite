@@ -1,45 +1,36 @@
 
-const fetch = require('node-fetch'); 
+
+
 
 import { motion } from 'framer-motion';
 import { useState } from "react"; 
 const Newsletter = () => { 
     //const request = require('request'); 
-    const [fail, setFail] = useState(false); 
+    const [sent, setSent] = useState(false); 
     
     const handleFormSubmit = async (e) => { 
         e.preventDefault();
         const email = document.getElementById('footer__input__text').value; 
-        console.log(email)
+        const res = await fetch(`ikaikarecords-production.up.railway.app/api/newsletter`, {
+            method: "POST", 
+            body: email
+        }); 
+        const message = await res.json()
+        console.log(message) 
+        setSent(true);
+
         
     // Construct req data
-    const data = {
-        members: [
-            {
-                email_address: email,
-                status: 'subscribed',
-            }
-        ]
-    };
-
-  const postData = JSON.stringify(data);
-
-  fetch('https://us14.api.mailchimp.com/3.0/lists/26861e53a9', {
-    method: 'POST',
-    headers: {
-      Authorization: 'auth 0c23a8fd563586c7db467e5d51d4d82a-us14'
-    },
-    body: postData
-  })
-
     }
 
     return ( 
         <section className='form__container'> 
             <form>
-                <label> <h2> NEWSLETTER </h2> </label>
-                <input type='email' placeholder="Enter email" id='footer__input__text'></input>
-                <motion.input whileHover={{backgroundColor: 'white', color: '#151515'}} transition={{duration: 0}} type='submit' value='SUBSCRIBE' onClick={handleFormSubmit} id='footer__input__submit'></motion.input >
+                {!sent ? <label> <h2> SIGN UP FOR UPDATES FROM IKAIKA RECORDS </h2> </label> : null}
+                {!sent ? <a> EMAIL</a> : null} 
+                {!sent ? <input type="email"  placeholder="email@example.com" id='footer__input__text' className='input__text' required></input> : null}
+                {!sent ? <motion.input whileHover={{backgroundColor: '#a6a6a6' }} transition={{duration: 0.25}} className="input__submit" type='submit' value='SUBSCRIBE' onClick={handleFormSubmit} id='footer__input__submit' required></motion.input > : null}
+                {sent ? <p> Thanks for signing up to the Ikaika Records Newsletter! You should receive an email confirmation shortly. </p>: null}
             </form>
         </section>
     )

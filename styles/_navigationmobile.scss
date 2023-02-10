@@ -11,7 +11,8 @@
     display: flex; 
     justify-content: center;
     nav {
-        padding-top: 2rem;
+        padding: 4rem 2rem 4rem 0;
+        height: min-content;
         width: 100%; 
         display: flex; 
         flex-direction: column;
@@ -44,14 +45,15 @@
             }
         }
         .navigation__mobile__header { 
-            font-family: $f-4; 
             font-size: $s-p; 
             color: $neutral-100;
             padding-bottom: 1rem; 
         }
         .navigation__mobile__socials { 
+            display: flex; 
             li { 
                 transition: all 0.5s;
+                padding-left: 1rem;
             }
             li:hover { 
                 transform: translate(0, -5px); 

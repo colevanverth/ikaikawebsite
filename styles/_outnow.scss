@@ -1,16 +1,37 @@
 .outnow__container { 
     overflow: hidden;
     display: flex; 
-    justify-content: center;
+    flex-direction: column;
 //    padding: 4rem 2rem; 
-    padding: 4rem 2rem 8rem 2rem; 
+    padding: 4rem 2rem 4rem 2rem; 
     //background: radial-gradient(50% 50% at 50% 50%, #0E1B22 0%, #151515 100%);
+}
+
+.outnow__shifters__container { 
+    display: flex; 
+    padding: 0 2rem; 
+    justify-content: center;
+}
+.outnow__shifters {
+    padding-bottom: 4rem;
+    width: calc(1400px);
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    img { 
+        cursor: pointer;
+    }
+    a { 
+        color: $neutral-100;
+        font-family: $f-2;
+    }
 }
 
 .outnow { 
     
+    margin: auto;
     min-width: 0; 
-    width: calc(1350px - 16rem);
+    width: calc(1400px);
     display: flex; 
     //justify-content: center; 
     .music__container {
@@ -36,19 +57,6 @@
     }
 }
 
-@media only screen and (max-width: 1350px) { 
-    .outnow { 
-       // justify-content: center; 
-        .music__container { 
-            padding-right: 3rem; 
-        div { 
-            height: 16rem; 
-            width: 16rem; 
-        }
-        }
-    }
-}
-
 @media only screen and (max-width: 750px) { 
     .outnow__container { 
         padding-left: 1rem; 
@@ -57,8 +65,8 @@
         .music__container { 
             padding-right: 2rem; 
             div { 
-                height: 13rem; 
-                width: 13rem; 
+                height: 15rem; 
+                width: 15rem; 
             }
         }
     }
