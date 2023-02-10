@@ -11,7 +11,7 @@ const Newsletter = () => {
     const handleFormSubmit = async (e) => { 
         e.preventDefault();
         const email = document.getElementById('footer__input__text').value; 
-        const res = await fetch(`ikaikarecords-production.up.railway.app/api/newsletter`, {
+        const res = await fetch(`http://localhost:3000/api/newsletter`, {
             method: "POST", 
             body: email
         }); 
