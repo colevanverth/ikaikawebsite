@@ -7,47 +7,47 @@ import { appear } from '../components/Appear';
 import Image from "next/image"
 import Head from 'next/head'
 
-const Services = ( props ) => { 
-    useEffect(() => {
-            const func = async () => {
-            const res = await fetch('https://ikaikascrapi-production.up.railway.app/api/services', {method: "GET"})
-            const servicesResponse = await res.json()
-            setServices(servicesResponse)
-        }
-        func()
-    },
-   []) 
+export async function getStaticProps() {
+const res = await fetch(`${process.env.NEXT_PUBLIC_IKAIKACMS}/api/services`, {method: "GET"})
+const services = await res.json()
 
-    const [service, setServices] = useState([]);
+return {
+props: {
+services,
+},
+};
+}
 
-    return ( 
-        <>  
-            <Head>
-                <title> Services - Ikaika Records </title> 
-            </Head> 
-            <div className='content__container'> 
+const Services = ({services}) => { 
+   return ( 
+      <>  
+         <Head>
+            <title> Services - Ikaika Records </title> 
+         </Head> 
+
+         <div className='content__container'> 
             <Header headerName='Services' />
-            
-                <div className='services__container'> 
-                    <main className='services'> 
-                    {service.data?.map((item, index) => { 
-                            return ( 
-                                <motion.div key={item.id} className='service__container' variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}}>
-                                    <img alt={item.attributes.alt} width='50%' src={item.attributes.imageLink}/>
-                                    <div> 
-                                        <a className='service__tag'> {item.attributes.tag.toUpperCase()} </a> 
-                                        <h3> {item.attributes.name.toUpperCase()} </h3> 
-                                        <p> {item.attributes.description} </p>
-                                        <Button className='button__big__hollow' text={item.attributes.calendlyLink ? "BOOK NOW" : "GET STARTED"} link={"/services/" + item.attributes.siteLink} />
-                                    </div>
-                                </motion.div>  
-                            )
-                        }
-                        )}
-                    </main> 
-                </div> 
-                </div>
-            </>
-    )
+            <div className='services__container'> 
+               <main className='services'> 
+
+                  {services.data?.map((item, index) => { 
+                     return ( 
+                        <motion.div key={item.id} className='service__container' variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}}>
+                           <img alt={item.attributes.alt} width='50%' src={item.attributes.imageLink}/>
+                           <div> 
+                           <a className='service__tag'> {item.attributes.tag.toUpperCase()} </a> 
+                           <h3> {item.attributes.name.toUpperCase()} </h3> 
+                           <p> {item.attributes.description} </p>
+                           <Button className='button__big__hollow' text={item.attributes.calendlyLink ? "BOOK NOW" : "GET STARTED"} link={"/services/" + item.attributes.siteLink} />
+                           </div>
+                        </motion.div>  
+                     )
+                  })}
+
+               </main> 
+            </div> 
+         </div>
+      </>
+   )
 }
 export default Services;
