@@ -3,6 +3,7 @@
     justify-content: center;
     width: 100%; 
     position: absolute; 
+    z-index: 100;
 
 }
 
@@ -55,7 +56,7 @@ nav {
         li { 
             div { 
                 position: relative; 
-                height: 2px; 
+                height: 1px; 
                 width: 0; 
                 background: $neutral-50; 
                 transition: all 0.5s;
@@ -79,6 +80,7 @@ nav {
         background-size: 50%; 
         background-position: center; 
         margin-left: auto; 
+        cursor: pointer;
     }
 }
 

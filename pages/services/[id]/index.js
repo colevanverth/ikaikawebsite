@@ -7,9 +7,33 @@ import {motion} from "framer-motion"
 
 const ServicePage = () => { 
 
+   const sendForm = async (e) => {
+       e.preventDefault()
+      setName(document.getElementById('project__input__name').value);
+      setSent(true)
+   const contactInfo = { 
+      name: document.getElementById('project__input__name').value,
+      phone: document.getElementById('project__input__phone').value,
+      email: document.getElementById('project__input__email').value,
+      message: document.getElementById('project__input__message').value,
+      type: service.data[0].attributes.name
+   }
+   const res = await fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      body: JSON.stringify(contactInfo),
+      headers: {
+         'Content-Type': 'application/json'
+      }
+   })
+   const message = await res.json()
+   //console.log(message) 
+   }
+
    const router = useRouter()
    const {id} = router.query
    const [service, setService] = useState(null)
+   const [name, setName] = useState("")
+   const [sent, setSent] = useState(false)
 
    useEffect(() => { 
       const func = async () => {
@@ -36,7 +60,7 @@ const ServicePage = () => {
 
 
          : null}
-         {!service?.data[0].attributes.calendlyLink ?
+         {!service?.data[0].attributes.calendlyLink && !sent ?
          <div className="project__container">
          <form className="project__form">
          <div className="project__input" first="">
@@ -45,21 +69,29 @@ const ServicePage = () => {
          </div> 
          <div className="project__input" second="">
          <a> PHONE (OPTIONAL) </a> 
-         <input type="tel" placeholder="999-999-9999" className="project__input__text"/> 
+         <input type="tel" id="project__input__phone" placeholder="999-999-9999" className="project__input__text"/> 
          </div>
          <div className="project__input" third="">
          <a> EMAIL </a> 
-         <input type="email" placeholder="email@example.com" className="project__input__text"/>
+         <input type="email" placeholder="email@example.com" id="project__input__email" className="project__input__text"/>
          </div>
          <div className="project__input" fourth="">
          <a> MESSAGE </a> 
-         <textarea className="project__input__text" placeholder="Tell us a little about your project..." rows="3"/>
+         <textarea className="project__input__text" id="project__input__message" placeholder="Tell us a little about your project..." rows="3"/>
          </div> 
-         <motion.input  whileHover={{backgroundColor: '#a6a6a6' }} transition={{duration: 0.25}} className="project__input__submit" type="submit" value="SUBMIT"/>
+         <motion.input  whileHover={{backgroundColor: '#a6a6a6' }} transition={{duration: 0.25}} className="project__input__submit" type="submit" value="SUBMIT" onClick={sendForm}/>
 
          </form>
          </div> 
          : null}
+         {sent ?
+               <div className="project__sent">
+                   Thanks {name}! We look forward to working with you 
+            and will get back to you as soon as possible
+                
+               </div> 
+         : null
+         }
       </div>  
    )
 }

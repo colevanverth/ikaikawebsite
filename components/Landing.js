@@ -38,9 +38,9 @@ return (
 
       <div className='gradient__container'> 
          <section className='landing__info__container'> 
-            <motion.div variants={appear} initial='hidden' whileInView='visible' viewport={{once: true}}>
+            <motion.div >
 
-               <div> 
+               <motion.div initial={{opacity: 0, y:35 }} whileInView={{opacity: 1, y:0}} transition={{delay: 0.1, duration: 0.35}}> 
                   <Image src="/services-primary.png" width={60} height={60} unoptimized={true} alt="Galaxy icon superimposed over blue circle" />
                   <h4> SERVICES </h4> 
                   <p>
@@ -48,9 +48,9 @@ return (
                      will collaborate with you to create something awesome. Our 
                      team will provide you the same expertise and personal attention that our signed artists receive.
                   </p> 
-               </div> 
+               </motion.div> 
 
-               <div> 
+               <motion.div initial={{opacity: 0, y: 35}} whileInView={{opacity: 1, y:0}} transition={{delay: 0.2, duration: 0.35}}> 
                   <Image src="/label-primary.png" width='60' height='60' unoptimized={true} alt="Star icon superimposed over blue circle"/>
                   <h4> LABEL </h4> 
                   <p>
@@ -59,16 +59,16 @@ return (
                      We work closely with our artists to foster their skills in 
                      recording, producing, and distribution.   
                   </p> 
-               </div>
+               </motion.div>
    
-               <div> 
+               <motion.div initial={{opacity: 0, y: 35}} whileInView={{opacity: 1, y:0}} transition={{delay: 0.3, duration: 0.35}}>  
                   <Image src="/community-primary.png" width='60' height='60' unoptimized={true} alt="Moon shape superimposed over blue circle" />
                   <h4> COMMUNITY </h4> 
                   <p>
                      Dedicated to making music creation accessible, we foster a
                      close connection with our community. On our Discord server 
                      you can connect with like-minded artists, hone your skills, and get an inside look at our label.</p> 
-               </div> 
+               </motion.div> 
 
             </motion.div> 
          </section>

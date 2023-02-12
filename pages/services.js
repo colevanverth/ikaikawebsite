@@ -25,6 +25,8 @@ const Services = ({services}) => {
             <title> Services - Ikaika Records </title> 
          </Head> 
 
+         <div className="services__content__image"/> 
+         <div className="services__content__transition"/>
          <div className='content__container'> 
             <Header headerName='Services' />
             <div className='services__container'> 

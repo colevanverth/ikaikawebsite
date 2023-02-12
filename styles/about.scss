@@ -1,0 +1,125 @@
+.about__content__image { 
+   background: url('https://images.gr-assets.com/hostedimages/1380427897ra/855663.gif');
+   background-size: cover; 
+   height: 12rem;
+}
+
+.about__content__transition { 
+    width: 100%;
+    height: 10rem;
+background: linear-gradient(0deg, #151515 0%, rgba(19, 22, 24, 0) 100%);
+    top: 2rem;
+    position: absolute; 
+    left: 0;
+    z-index: 10;
+}
+
+.about__content { 
+background: linear-gradient(167.94deg, #151515 55.55%, #122028 81.68%);
+}
+.about__container { 
+   position: relative; 
+   z-index: 100;
+   display: flex; 
+   justify-content: center;
+      padding: 4rem 2rem;
+   .about {
+      width: 1400px;
+      display: flex;
+      .about__vision { 
+         h2 { 
+            font-size: $s-h4;
+            font-family: $f-5; 
+            padding-bottom: 1rem;
+         }
+         a { 
+            font-size: $s-p;
+            font-family: $f-1; 
+            color: $neutral-50;
+         }
+         p { 
+            max-width: 900px;
+            padding-top: 1rem;
+            color: $neutral-100;
+         }
+      }
+      .about__text__container { 
+         padding-left: 4rem;
+         width: 100%; 
+         .about__text { 
+            padding-bottom: 3rem;
+            img { 
+               margin-bottom: 0.5rem;
+            }
+            p { 
+               color: $neutral-100;
+            }
+         }
+      }
+   }
+}
+
+.about__cj__container { 
+   background: radial-gradient(89.88% 89.88% at 50% 87.93%, #112028 0%, rgba(21, 24, 26, 0) 100%);
+   padding: 8rem 2rem;
+   display: flex; 
+   justify-content: center;
+   .about__cj { 
+      width: 1400px;
+      display: flex; 
+      div { 
+         padding-left: 4rem;
+         h2 { 
+            font-size: $s-h4;
+            font-family: $f-5; 
+            padding-bottom: 1rem;
+         }
+         p { 
+            padding-top: 0.5rem;
+            color: $neutral-100;
+            max-width: 800px;
+         }
+      }
+   }
+}
+
+
+@media only screen and (max-width: 1350px) { 
+   .about__cj__container { 
+      .about__cj { 
+         flex-direction: column;
+         div { 
+            padding-top: 4rem;
+            padding-left: 0;
+         }
+         img { 
+            width: 300px;
+            height: 300px;
+         }
+      }
+   }
+   .about__container {
+      .about { 
+         flex-direction: column;
+         .about__text__container { 
+            padding: 0;
+            padding-top: 4rem;
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 750px) { 
+   .about__container { 
+      .about { 
+         img { 
+            display: none;
+         }
+      }
+      padding-left: 1rem;
+      padding-right: 1rem;
+   }
+   .about__cj__container {
+      padding: 4rem 1rem 4rem 1rem;
+   }
+}

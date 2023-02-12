@@ -8,6 +8,7 @@ html {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   background: $neutral-200;
+ -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
 /**

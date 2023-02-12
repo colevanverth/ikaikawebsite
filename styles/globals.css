@@ -24,6 +24,7 @@ html {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   background: #161A1E;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
 /**
@@ -98,6 +99,7 @@ a {
   justify-content: center;
   width: 100%;
   position: absolute;
+  z-index: 100;
 }
 
 nav {
@@ -152,7 +154,7 @@ nav .navigation__menu li {
 }
 nav .navigation__menu li div {
   position: relative;
-  height: 2px;
+  height: 1px;
   width: 0;
   background: #ffffff;
   transition: all 0.5s;
@@ -172,6 +174,7 @@ nav .navigation__button__on {
   background-size: 50%;
   background-position: center;
   margin-left: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1350px) {
@@ -498,8 +501,23 @@ footer ul li:hover a img {
     padding: 4rem 0 0 1rem;
   }
 }
+.services__content__image {
+  background: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/44553921624393.56306275cd330.gif");
+  background-size: cover;
+  height: 12rem;
+}
+
+.services__content__transition {
+  width: 100%;
+  height: 10rem;
+  background: linear-gradient(0deg, #151B20 0%, rgba(19, 22, 24, 0) 100%);
+  top: 2rem;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
 .content__container {
-  padding-top: 4.5rem;
   background: radial-gradient(50% 50% at 50% 50%, #132027 0%, #161A1E 100%);
 }
 
@@ -720,6 +738,14 @@ footer ul li:hover a img {
   display: flex;
 }
 
+.project__sent {
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23.99px;
+}
+
 .project__form {
   width: 1400px;
   display: flex;
@@ -806,7 +832,7 @@ footer ul li:hover a img {
   height: 100vh;
   background: #161A1E;
   position: fixed;
-  z-index: 10;
+  z-index: 200;
   width: 100vw;
   top: 0;
   right: 0;
@@ -814,7 +840,7 @@ footer ul li:hover a img {
   justify-content: center;
 }
 .navigation__mobile__container nav {
-  padding: 4rem 2rem 4rem 0;
+  padding: 2rem 2rem 2rem 0;
   height: min-content;
   width: 100%;
   display: flex;
@@ -829,14 +855,14 @@ footer ul li:hover a img {
 }
 .navigation__mobile__container nav li a {
   width: min-content;
-  font-size: 31.98px;
+  font-size: 23.99px;
 }
 .navigation__mobile__container nav .navigation__mobile__links {
   padding-bottom: 2rem;
 }
 .navigation__mobile__container nav .navigation__mobile__links li div {
   position: relative;
-  height: 2px;
+  height: 1px;
   width: 0;
   background: #ffffff;
   transition: all 0.5s;
@@ -867,6 +893,124 @@ footer ul li:hover a img {
   margin-bottom: 2rem;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
+}
+
+.about__content__image {
+  background: url("https://images.gr-assets.com/hostedimages/1380427897ra/855663.gif");
+  background-size: cover;
+  height: 12rem;
+}
+
+.about__content__transition {
+  width: 100%;
+  height: 10rem;
+  background: linear-gradient(0deg, #151515 0%, rgba(19, 22, 24, 0) 100%);
+  top: 2rem;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.about__content {
+  background: linear-gradient(167.94deg, #151515 55.55%, #122028 81.68%);
+}
+
+.about__container {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+.about__container .about {
+  width: 1400px;
+  display: flex;
+}
+.about__container .about .about__vision h2 {
+  font-size: 23.99px;
+  font-family: "SpaceGrotesk-Medium", sans-serif;
+  padding-bottom: 1rem;
+}
+.about__container .about .about__vision a {
+  font-size: 18px;
+  font-family: "SpaceGrotesk-SemiBold", sans-serif;
+  color: #ffffff;
+}
+.about__container .about .about__vision p {
+  max-width: 900px;
+  padding-top: 1rem;
+  color: #A4ACB4;
+}
+.about__container .about .about__text__container {
+  padding-left: 4rem;
+  width: 100%;
+}
+.about__container .about .about__text__container .about__text {
+  padding-bottom: 3rem;
+}
+.about__container .about .about__text__container .about__text img {
+  margin-bottom: 0.5rem;
+}
+.about__container .about .about__text__container .about__text p {
+  color: #A4ACB4;
+}
+
+.about__cj__container {
+  background: radial-gradient(89.88% 89.88% at 50% 87.93%, #112028 0%, rgba(21, 24, 26, 0) 100%);
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+.about__cj__container .about__cj {
+  width: 1400px;
+  display: flex;
+}
+.about__cj__container .about__cj div {
+  padding-left: 4rem;
+}
+.about__cj__container .about__cj div h2 {
+  font-size: 23.99px;
+  font-family: "SpaceGrotesk-Medium", sans-serif;
+  padding-bottom: 1rem;
+}
+.about__cj__container .about__cj div p {
+  padding-top: 0.5rem;
+  color: #A4ACB4;
+  max-width: 800px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .about__cj__container .about__cj {
+    flex-direction: column;
+  }
+  .about__cj__container .about__cj div {
+    padding-top: 4rem;
+    padding-left: 0;
+  }
+  .about__cj__container .about__cj img {
+    width: 300px;
+    height: 300px;
+  }
+  .about__container .about {
+    flex-direction: column;
+  }
+  .about__container .about .about__text__container {
+    padding: 0;
+    padding-top: 4rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .about__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .about__container .about img {
+    display: none;
+  }
+  .about__cj__container {
+    padding: 4rem 1rem 4rem 1rem;
+  }
 }
 
 /*# sourceMappingURL=globals.css.map */

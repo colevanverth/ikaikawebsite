@@ -27,7 +27,7 @@ const Navigation = ({setMobile}) => {
    <div className='navigation__bar'> 
    </div> 
    <ul  className='navigation__menu'>
-   <li> <Link className='navigation-item' href='/'>HOME</Link> <div/> </li>
+   <li> <Link className='navigation-item' href='/about'>ABOUT</Link> <div/> </li>
    <li> <Link className='navigation__item' href='/services'>SERVICES</Link> <div/> </li>
    </ul>
    <i onClick={() => setMobile(true)} className='navigation__button__on'></i> 

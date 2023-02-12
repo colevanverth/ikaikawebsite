@@ -10,6 +10,14 @@
     display: flex;
 }
 
+.project__sent { 
+   height: 1000px;
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+   font-size: $s-h4;
+}
+
 
 .project__form { 
         width: 1400px;

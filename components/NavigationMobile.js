@@ -9,7 +9,7 @@ const NavigationMobile = ({setMobile}) => {
             <i onClick={() => setMobile(false)} className='navigation__button__off'></i> 
             <a className='navigation__mobile__header'> IKAIKA RECORDS</a>
             <ul className='navigation__mobile__links'> 
-            <li> <Link onClick={() => setMobile(false)} className='navigation-item' href='/'>HOME <div/> </Link> </li>
+            <li> <Link onClick={() => setMobile(false)} className='navigation-item' href='/about'>ABOUT <div/> </Link> </li>
             <li> <Link onClick={() => setMobile(false)} className='navigation__item' href='/services'>SERVICES <div/> </Link> </li>
             </ul>  
             <a className='navigation__mobile__header'> SOCIALS </a>

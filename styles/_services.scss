@@ -1,5 +1,20 @@
+.services__content__image { 
+   background: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/44553921624393.56306275cd330.gif');
+   background-size: cover; 
+   height: 12rem;
+}
+
+.services__content__transition { 
+    width: 100%;
+    height: 10rem;
+   background: linear-gradient(0deg, #151B20 0%, rgba(19, 22, 24, 0) 100%);
+    top: 2rem;
+    position: absolute; 
+    left: 0;
+    z-index: 10;
+}
+
 .content__container {
-     padding-top: 4.5rem; 
      background: radial-gradient(50% 50% at 50% 50%, #132027 0%, #161A1E 100%);
 }
 .services__container { 
