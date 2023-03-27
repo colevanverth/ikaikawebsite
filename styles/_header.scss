@@ -1,42 +1,49 @@
-.header__container { 
-    padding: 4rem 2rem 0 2rem; 
-    display: flex; 
-    justify-content: center; 
-    .header__fill { 
-        flex-grow: 1; 
-        display: flex; 
-        align-items: flex-end; 
-        div { 
-            height: 1px; 
-            background: transparent; 
-            width: 100%; 
-        }
-    }
-    .header__space { 
-        height: 1px; 
-        width: auto; 
-        flex-grow: 1; 
-    }
 
-    header {
-        width: calc(1400px); 
-        div { 
-            height: 1px; 
-            background: linear-gradient(90deg, #3b4e5c 0.65%, #161A1E 98.98%);
-            width: 100%; 
-        }
-        h2 { 
-            padding-bottom: 0.5rem;
-        }
-        a { 
-            color: $neutral-100;
-            font-family: $f-2;
-        }
+.header__major { 
+      width: $width-100;
 }
+
+.header__minor { 
+   width: $width-200;
+}
+header {
+   padding-top: 4rem;
+   div { 
+      height: 1px; 
+      background: linear-gradient(90deg, #3b4e5c 0.65%, #161A1E 98.98%);
+      width: 100%; 
+   }
+   h2 { 
+      padding-bottom: 0.5rem;
+   }
+   a { 
+      color: $neutral-100;
+      font-family: $f-2;
+   }
+}
+
+// The fading out bar
+.header__fill { 
+   flex-grow: 1; 
+   display: flex; 
+   align-items: flex-end; 
+
+   div { 
+      height: 1px; 
+      background: transparent; 
+      width: 100%; 
+   }
+}
+
+// The emopty space of the bar
+.header__space { 
+   height: 1px; 
+   width: auto; 
+   flex-grow: 1; 
 }
 
 @media only screen and (max-width: 750px) {
-    .header__container {
-        padding: 4rem 0 0 1rem; 
-    }
+   .header__container {
+      padding: 4rem 0 0 1rem; 
+   }
 }

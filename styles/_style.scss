@@ -6,22 +6,22 @@
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  font-smoothing: antialiased; // TODO: Figure out what these do
   background: $neutral-200;
- -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+ -webkit-text-size-adjust: 100%; // Prevent font scaling on landscape mode
 }
 
-/**
- * Firefox specific rule
- */
+// TODO: Figure out what this is
 
-@-moz-document url-prefix() {
-  body {
-    font-weight: lighter !important;
-  }
-}
-
-
+// /**
+//  * Firefox specific rule
+//  */
+//
+// @-moz-document url-prefix() {
+//   body {
+//     font-weight: lighter !important;
+//   }
+// }
 
 * { 
     font-size: 18px;
@@ -33,10 +33,11 @@ html {
     box-sizing: border-box; 
     margin: 0;
     padding: 0; 
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; // TODO: Figure out what these do
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
 }
+
 h1 {
     font-size: $s-h1; 
     font-family: $f-3; 
@@ -60,8 +61,9 @@ h4 {
 }
 
 h1,h2,h3 { 
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility; // TODO: Figure out what this does
 }
+
 p { 
     font-size: $s-p; 
     font-family: $f-2; 
@@ -71,12 +73,28 @@ a {
     font-size: $s-p; 
 }
 
-.gif__container { 
-    background: url('https://media.tenor.com/4R3MLPbybcgAAAAC/studio-nodding.gif');
-    background-size: 100% 100%; 
- }
+// Vertical gradient
+.gradient__container {
+   background: linear-gradient(180deg, #161A1E 44.74%, #132027 100%);
+}
 
- .gradient__container {
-    background: linear-gradient(180deg, #161A1E 44.74%, #132027 100%);
-    //background: linear-gradient(180deg, #151515 0%, #12181B 100%);
- }
+// Radial gradient
+.radial__container {
+     background: radial-gradient(50% 50% at 50% 50%, #132027 0%, #161A1E 100%);
+}
+
+// Base container with horizontal padding
+.content__container { 
+   width: 100%; 
+   display: flex;
+   justify-content: center; 
+   padding: 0 2rem; 
+   @media only screen and (max-width: $query-100) { 
+      padding: 0 1rem;
+   }
+}
+
+.page__padding { 
+   padding-top: 6rem; // Height of the navigation bar
+}
+

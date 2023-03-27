@@ -1,99 +1,84 @@
 import Header from "../../../components/Header"
+import ContactForm from "../../../components/ContactForm"
+import EquipmentList from "../../../components/EquipmentList"
 
+import Image from "next/image"
 import Script from "next/script"
 import {useRouter} from "next/router"
 import {useEffect, useState} from "react"
 import {motion} from "framer-motion"
 
-const ServicePage = () => { 
+/**
+ * Generates service pages on build; `params` is exposed to getStaticProps()
+*/
+export async function getStaticPaths() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_IKAIKACMS}/api/services`)
+  const services = await res.json()
 
-   const sendForm = async (e) => {
-       e.preventDefault()
-      setName(document.getElementById('project__input__name').value);
-      setSent(true)
-   const contactInfo = { 
-      name: document.getElementById('project__input__name').value,
-      phone: document.getElementById('project__input__phone').value,
-      email: document.getElementById('project__input__email').value,
-      message: document.getElementById('project__input__message').value,
-      type: service.data[0].attributes.name
-   }
-   const res = await fetch("http://localhost:3000/api/contact", {
-      method: "POST",
-      body: JSON.stringify(contactInfo),
-      headers: {
-         'Content-Type': 'application/json'
+   const paths = services.data?.map((item) => { 
+      return {
+         params: { id: item.attributes.siteLink }
       }
    })
-   const message = await res.json()
-   //console.log(message) 
-   }
 
-   const router = useRouter()
-   const {id} = router.query
-   const [service, setService] = useState(null)
-   const [name, setName] = useState("")
-   const [sent, setSent] = useState(false)
+  return { paths, fallback: false }
+}
 
-   useEffect(() => { 
-      const func = async () => {
-         if (!router.isReady) return
-         const res = await fetch(`${process.env.NEXT_PUBLIC_IKAIKACMS}/api/services?filters[siteLink][$eq]=` + id,  {method: "GET"})
-         const serviceResponse = await res.json()
-         console.log(serviceResponse.data.length)
-         if (serviceResponse.data.length == 0) {router.replace('/404')}
-         setService(serviceResponse)
-         console.log(res.status)
-         //console.log(serviceResponse.data[0].attributes)
+/**
+ * Pulls service object corresponding to current slug and creates a prop for that service.
+*/
+export async function getStaticProps({ params }) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_IKAIKACMS}/api/services/?filters[siteLink][$eq]=${params.id}`)
+  const serviceData = await res.json();
+   const service = serviceData.data[0];
+
+  return { props: { service } }
+}
+
+const ServicePage = ({service}) => {
+   const [pageType, setPageType] = useState("");
+
+   useEffect( ()=> {
+      // Checks to see if there is a calendly link associated with the service
+      if (service.attributes.calendlyLink) { 
+         setPageType("calendar");
       }
-      func()
-   }, [router.isReady])
-
+      else { 
+         setPageType("form");
+      }
+   })
    return (
-      <div className="content__container" >
-         {id ? <Header headerName={id} prev="services"/> : null}
-         {service?.data[0].attributes.calendlyLink ? 
-         <>
-         <div className="calendly-inline-widget" data-url={`https://${service.data[0].attributes.calendlyLink}?hide_gdpr_banner=1&background_color=161A1E&text_color=ffffff&primary_color=1C6590`} style={{height: 850}}></div>
+      <div className="radial__gradient"> 
+         <div className="page__padding" />
+         <Header headerName={service.attributes.name} prev="services"/>
+
+         { pageType == "calendar" ? 
+               <>
+                   <div className="calendly-inline-widget" data-url={`https://calendly.com/ikaikarecords/30min?hide_gdpr_banner=1&background_color=161A1E&text_color=ffffff&primary_color=1C6590`} style={{height: 850}}></div>
          <Script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></Script> 
-         </>
+               </>
+         : null }
+
+         <div className="content__container" > 
+            <div className="servicepage__description">
+               <Image src={service.attributes.imageLink} width={0} height={0} unoptimized={true} alt="Galaxy icon superimposed over blue circle" />
+               <p> {service.attributes.description} </p>
+            </div> 
+         </div> 
+         { pageType == "form" ? <ContactForm serviceName={service.attributes.name}/> : null } 
+
+      { service.attributes.siteLink == "studio-recording" ? 
+            <>
+               <Header headerName="recording equipment" minor={true} />
+               <div className="content__container">
+                  <EquipmentList /> 
+               </div>
+            </>
+      : null } 
 
 
-         : null}
-         {!service?.data[0].attributes.calendlyLink && !sent ?
-         <div className="project__container">
-         <form className="project__form">
-         <div className="project__input" first="">
-         <a> NAME </a> 
-         <input className="project__input__text" id="project__input__name" placeholder="Anthony Fantano"/>
-         </div> 
-         <div className="project__input" second="">
-         <a> PHONE (OPTIONAL) </a> 
-         <input type="tel" id="project__input__phone" placeholder="999-999-9999" className="project__input__text"/> 
-         </div>
-         <div className="project__input" third="">
-         <a> EMAIL </a> 
-         <input type="email" placeholder="email@example.com" id="project__input__email" className="project__input__text"/>
-         </div>
-         <div className="project__input" fourth="">
-         <a> MESSAGE </a> 
-         <textarea className="project__input__text" id="project__input__message" placeholder="Tell us a little about your project..." rows="3"/>
-         </div> 
-         <motion.input  whileHover={{backgroundColor: '#a6a6a6' }} transition={{duration: 0.25}} className="project__input__submit" type="submit" value="SUBMIT" onClick={sendForm}/>
-
-         </form>
-         </div> 
-         : null}
-         {sent ?
-               <div className="project__sent">
-                   Thanks {name}! We look forward to working with you 
-            and will get back to you as soon as possible
-                
-               </div> 
-         : null
-         }
-      </div>  
+      </div> 
    )
 }
 
-export default ServicePage; 
+export default ServicePage;

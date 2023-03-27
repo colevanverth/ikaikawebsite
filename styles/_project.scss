@@ -20,9 +20,13 @@
 
 
 .project__form { 
-        width: 1400px;
+         width: $width-200;
         display: flex; 
         flex-wrap: wrap;
+        h3 { 
+           flex-basis: 100%;
+           padding-bottom: 1rem;
+         }
         a { 
             font-size: $s-p2;
             font-family: $f-5;
@@ -44,10 +48,9 @@
         }
         .project__input__submit { 
             font-size: $s-p; 
-            width: 100%;
+            margin-left: auto;
             font-family: $f-5;
-            padding: 0.5rem 1rem; 
-            margin-top: 1rem; 
+            padding: 0.5rem 6rem; 
             border: none;
             background: $neutral-50;
             cursor: pointer;
@@ -69,6 +72,7 @@
         }
         .project__input[third] { 
             width: 50%; 
+            padding-right: 1rem;
         }
         .project__input[fourth] { 
         flex-basis: 100%;
@@ -97,11 +101,15 @@
          }
          .project__input[third] { 
             flex-basis: 100%; 
+            padding: 0;
          }
          .project__input[fourth] { 
             textarea { 
                height: 10rem;
             }
+         }
+        .project__input__submit { 
+           flex-basis: 100%;
          }
       }
    }

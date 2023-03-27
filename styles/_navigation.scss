@@ -1,117 +1,103 @@
 .navigation__container { 
-    display: flex; 
-    justify-content: center;
-    width: 100%; 
-    position: absolute; 
-    z-index: 100;
-
+   // Since navigation is on every page by default but may need to be above GIF container
+   // it has to be position with absolute
+   position: absolute; 
+   z-index: 100;
 }
 
 nav { 
-    padding: 1rem 2rem; 
-    display: flex; 
-    width: 1600px;
-    align-items: center;
-    a { 
-        text-decoration-color: white; 
-    }
-    /*a:hover {
-        transition: all 0.75s linear;
-        text-decoration-line: underline;
-        text-underline-offset: 4px; 
-        text-decoration-color: #19709C;
-        text-decoration-thickness: 4px;
-    }*/ 
-    .navigation__logo {
-         margin-right: 9px;
-    }
-    .navigation__socials { 
-        
-        padding-left: 1rem; 
-        padding-right: 45px; 
-        display: flex; 
-        align-items: center;
-        li {
-            transition: all 0.5s;
-            display: flex; 
-            flex-direction: column; 
-            list-style: none; 
-            padding: 0 9px; 
-            a { 
-                display: flex; 
-                align-items: center; 
-            }
-          
-        } 
-        li:hover { 
-            filter: invert(32%) sepia(100%) saturate(410%) hue-rotate(158deg) brightness(85%) contrast(92%);
-        }
-    }
-    .navigation__menu { 
-        padding-left: 36px; 
-        margin-left: auto; 
-        display: flex; 
-        height: 100%; 
-        align-items: center;
-        li { 
-            div { 
-                position: relative; 
-                height: 1px; 
-                width: 0; 
-                background: $neutral-50; 
-                transition: all 0.5s;
-            }
-            padding: 0 18px; 
-            list-style: none;   
-            a { 
-                font-family: $f-5; 
-            }
-        } 
-        li:hover div { 
-            width: 100%; 
-        }
-    }
-    .navigation__button__on { 
-        display: none; 
-        background: url('../public/menu.svg'); 
-        width: 50px; 
-        height: 50px; 
-        background-repeat: no-repeat; 
-        background-size: 50%; 
-        background-position: center; 
-        margin-left: auto; 
-        cursor: pointer;
-    }
+   height: 6rem; // 4rem of logo + 2 rem of padding
+   align-items: center;
+   width: $width-50;
+   display: flex; 
+   align-items: center;
+
+   .navigation__socials { 
+      display: flex; 
+      padding-left: 1rem;
+      align-items: center;
+
+      li {
+         display: flex; 
+         padding-left: 1rem;
+         transition: all 0.5s;
+      }
+
+      li:hover { 
+         // Turns icons into primary blue color
+         filter: invert(32%) sepia(100%) saturate(410%) hue-rotate(158deg) brightness(85%) contrast(92%);
+      }
+   }
+
+   .navigation__menu { 
+      margin-left: auto; 
+      display: flex; 
+      align-items: center;
+
+      li { 
+
+         padding-left: 2rem;
+         list-style: none;   
+
+         // The underlining border on hover
+         div { 
+             position: relative; 
+             height: 1px; 
+             width: 0; 
+             background: $neutral-50; 
+             transition: all 0.5s;
+         }
+
+         a { 
+             font-family: $f-5; 
+         }
+      } 
+
+      // Animates the underlining border on hover
+      li:hover div { 
+         width: 100%; 
+      }
+   }
+
+   .navigation__button__on { 
+      display: none; // Hidden by default; revealed by media query
+      width: 1.5rem; 
+      height: 1.5rem; 
+      margin-left: auto; 
+      cursor: pointer;
+
+      background: url('../public/menu.svg'); 
+      background-repeat: no-repeat; 
+      background-size: 100%; 
+      background-position: center; 
+   }
 }
 
-@media only screen and (max-width: 1350px) { 
-    nav { 
-        .navigation__button__on {
-            display: block; 
-        }
-        .navigation__menu { 
-            display: none; 
-        }
-    }
+@media only screen and (max-width: $query-50) { 
+
+   nav { 
+
+      .navigation__button__on {
+         display: block; 
+      }
+
+      .navigation__menu { 
+         display: none; 
+      }
+
+   }
 }
 
-@media only screen and (max-width: 750px) { 
-    nav { 
-        .navigation__logo { 
-            width: 50px; 
-        }
-        padding: 1rem; 
-       .navigation__socials { 
-        display: none; 
-            padding-right: 0; 
-                li {
-                    padding: 0 0.25rem; 
-                    a { 
-                        img { 
-                            width: 17px; 
-                        }
-                    }
-                }
-        }
-    }
+@media only screen and (max-width: $query-100) { 
+
+   nav { 
+
+      .navigation__logo { 
+         width: 3rem; // Size of logo decreases for mobile screens
+      }
+
+      .navigation__socials { 
+         display: none;
+      }
+   }
 }

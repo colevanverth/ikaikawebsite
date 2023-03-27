@@ -1,3 +1,4 @@
+// Font declarations
 @font-face {
     font-family: 'SpaceGrotesk-SemiBold';
     src: url('../fonts/SpaceGrotesk-SemiBold.ttf') format('woff'); 
@@ -19,7 +20,6 @@
     src: url('../fonts/SpaceGrotesk-Medium.ttf') format('woff'); 
 }
 
-
 // Fonts
 $f-1: 'SpaceGrotesk-SemiBold', sans-serif;
 $f-2: 'SpaceGrotesk-Regular', sans-serif;
@@ -36,14 +36,20 @@ $s-a: 18px;
 $s-p2: 13.5px; 
 
 // Neutral colors
-//$neutral-50: #FFFFFF; 
 $neutral-50: #ffffff; 
-//$neutral-100: #AEAEAE; 
 $neutral-100: #A4ACB4; 
-//$neutral-150: #414141; 
 $neutral-150: #25272b;
-//$neutral-200: #151515;
 $neutral-200: #161A1E; 
 
 // Primary colors
 $primary-50: #1C6590;
+
+// Media queries
+$query-50: 1350px;
+$query-100: 750px;
+
+// Screen widths
+$width-50: 1600px;
+$width-100: 1456px; // 18 rems less than outer
+$width-150: 1026px; // Arbitrarily choosen for super center in landing page
+$width-200: 720px; // Arbitarily choosen for super super center in service page

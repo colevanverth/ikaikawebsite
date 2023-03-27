@@ -1,7 +1,20 @@
 import Landing from '../components/Landing'
 import Head from 'next/head'
 
-export default function Home() {
+export async function getStaticProps() {
+   const res = await fetch(`${process.env.NEXT_PUBLIC_IKAIKACMS}/api/outnows`, {method: "GET"})
+   const outnows = await res.json()
+   const amount = outnows.data.length;
+
+   return {
+      props: {
+         outnows,
+         amount
+      },
+   };
+}
+
+export default function Home({outnows, amount}) {
    return (
       <>
       <Head>
@@ -10,7 +23,7 @@ export default function Home() {
          <meta name="viewport" content="width=device-width, initial-scale=1" />
          <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Landing /> 
+      <Landing outnows={outnows} amount={amount} /> 
       </>
    )
 }

@@ -2,9 +2,7 @@
     overflow: hidden;
     display: flex; 
     flex-direction: column;
-//    padding: 4rem 2rem; 
     padding: 4rem 2rem 4rem 2rem; 
-    //background: radial-gradient(50% 50% at 50% 50%, #0E1B22 0%, #151515 100%);
 }
 
 .outnow__shifters__container { 
@@ -14,7 +12,7 @@
 }
 .outnow__shifters {
     padding-bottom: 4rem;
-    width: calc(1400px);
+    width: $width-100;
     display: flex; 
     justify-content: flex-end;
     align-items: center;
@@ -31,7 +29,7 @@
     
     margin: auto;
     min-width: 0; 
-    width: calc(1400px);
+    width: $width-100;
     display: flex; 
     //justify-content: center; 
     .music__container {
